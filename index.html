@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="js/angular.min.js" type="text/javascript"></script>
+    <script src="js/angular-route.js" type="text/javascript"></script>
+    <script src="js/controller/mainController.js"></script>
+    <script src="js/controller/developer.js"></script>
+    <script src="js/controller/tester.js"></script>
+    <script src="js/routes/routes.js"></script>
+</head>
+<body ng-app="myApp">
+<div>
+    <nav class="col-lg-6">
+        <ul class="nav nav-justified">
+            <li><a ng-href="#/developer" > Developer </a> &nbsp;&nbsp;&nbsp;&nbsp;</li>
+            <li><a ng-href="#/tester" > Tester </a> &nbsp;&nbsp;&nbsp;&nbsp;</li>
+            <li><a ng-href="#/" class="active" > Main </a></li>
+        </ul>
+    </nav>
+
+</div>
+<br>
+<div>
+    <h1>Bug Tracking System</h1>
+    <ng-view></ng-view>
+</div>
+</body>
+</html>

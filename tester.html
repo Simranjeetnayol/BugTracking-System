@@ -1,0 +1,63 @@
+
+<table>
+    <tr  class="col-lg-12">
+        <td class="col-lg-2 table-bordered"><h3>Tester</h3></td>
+        <td class="col-lg-2 table-bordered"><u>Bug Tracking System</u></td>
+        <td class="col-lg-2 table-bordered">Partial</td>
+        <td class="col-lg-2 table-bordered">
+            <nav>
+                <ul class="nav  nav-justified">
+                    <li><img id="red" class="img-circle btn btn-danger" ng-click="sort('red')"></li>
+                    <li><img id="orange" class="img-circle btn btn-warning" ng-click="sort('orange')"></li>
+                    <li><img id="green" class="img-circle btn btn-success" ng-click="sort('green')"></li>
+                </ul>
+            </nav>
+        </td>
+        <td class="col-lg-4"></td>
+    </tr>
+    </table>
+<table class="col-lg-12 table-bordered">
+    <tr>
+        <td>Bug Name : </td>
+        <td><input type="text" ng-model="name"></td>
+    </tr>
+    <tr>
+        <td>Desc : </td>
+        <td><input type="text" ng-model="desc"></td>
+    </tr>
+    <tr>
+        <td>User Name : </td>
+        <td><input type="text" ng-model="username"></td>
+    </tr>
+    <tr>
+        <td>Date : </td>
+        <td><input type="text" ng-model="date"></td>
+    </tr>
+    <tr>
+        <td>Count : </td>
+        <td>completed : {{completed()}} Pending : {{pending()}} Check : {{verify()}}</td>
+    </tr>
+    <tr>
+        <td>status : </td>
+        <td><input type="radio" ng-click="statusfunc('red')" name="statusGroup" value="error">error <input type="radio" name="statusGroup" ng-click="statusfunc('green')" value="Resolved">Resolved</td>
+    </tr>
+
+    <tr class="nav nav-justified">
+        <td colspan="2"><button ng-click="add()">Add</button>&nbsp;&nbsp;&nbsp;<button ng-click="save()">Save</button>&nbsp;&nbsp;&nbsp;<button ng-click="load()">Load</button>&nbsp;&nbsp;&nbsp;<button ng-click="close()">Close</button>&nbsp;&nbsp;&nbsp;<button ng-click="search()">Search</button></td>
+    </tr>
+</table>
+
+<table border="1" class="col-lg-12 table-bordered">
+    <tr>
+        <th>Name</th>
+        <th>Desc</th>
+        <th>User Name</th>
+        <th>Date</th>
+    </tr>
+    <tr ng-repeat="bug in bugList" ng-click="task($index)" style="cursor: pointer">
+        <td style="color: {{bug.status}}" >{{bug.name}}</td>
+        <td style="color: {{bug.status}}">{{bug.desc}}</td>
+        <td style="color: {{bug.status}}">{{bug.user}}</td>
+        <td style="color: {{bug.status}}">{{bug.date}}</td>
+    </tr>
+</table>

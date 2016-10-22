@@ -1,0 +1,28 @@
+<table ng-init="load()">
+    <tr>
+        <td><h3>Developer</h3></td>
+        <td><u>Bug Tracking System</u></td>
+        <td>Partial</td>
+    </tr>
+    <tr>
+        <td>Count : </td>
+        <td>completed : {{resolved()}} Pending : {{issues()}} Check : {{verify()}}</td>
+    </tr>
+    <tr>
+        <td colspan="3"><button ng-click="save()">Save Changes</button></td>
+    </tr>
+</table>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Desc</th>
+        <th>User Name</th>
+        <th>Date</th>
+    </tr>
+    <tr ng-repeat="bug in bugList" ng-click="task($index)" style="cursor: pointer">
+        <td style="color: {{bug.status}}" >{{bug.name}}</td>
+        <td style="color: {{bug.status}}">{{bug.desc}}</td>
+        <td style="color: {{bug.status}}">{{bug.user}}</td>
+        <td style="color: {{bug.status}}">{{bug.date}}</td>
+    </tr>
+</table>
